@@ -87,6 +87,7 @@ app.movieParse = (outputData, outputDataLength) => {
             }
             app.movieAppend(sortedMovies);
         } else if (outputDataLength === 0) {
+            $('.movieList').empty()
             $('.queryResult').empty()
             $('.queryResult').append(`<h2>You searched for: ${app.searchTerm}</h2>`);
             $('.queryResult').append(`<div class="movieItem">
@@ -106,11 +107,7 @@ app.movieParse = (outputData, outputDataLength) => {
             }
         }
     }
-
-    // console.log(outputDataLength)
-    // console.log(genNumbers)
     sortMovies();
-    // console.log(sortedMovies)
 }
 
 app.getMovies = (word) => {
